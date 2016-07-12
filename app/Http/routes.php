@@ -21,25 +21,12 @@ Route::get('/home', function () {
 	//   of the name of a file in resources/views.
 	//
 	//   In this case, it reads 'welcome' as:
-	//   The file at resourves/views/welcome.blade.php
+	//   The file at resources/views/welcome.blade.php
 	return view('welcome');
 });
 
-Route::get('/about', function () {
-	// Our route is nice and tidy.
-	return view('about', aboutMeValues ());
-});
+Route::get('/about', 'AboutController@aboutMe');
 
-// Extracting data logic from our route is
-// good practice. 
-// 
-// But, cluttering up our
-// routes.php file with functions like this
-// isn't . . . There's a better way.
-function aboutMeValues() {
-	$name     = 'Peleke';
-	$age  	  = 23;
-	$location = 'Syracuse';
+Route::auth();
 
-	return compact('name', 'age', 'location');
-}
+Route::get('/home', 'HomeController@index');
