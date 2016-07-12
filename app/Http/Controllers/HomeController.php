@@ -22,8 +22,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $user = $request->user();
+
+        // There are more efficient ways to do this. 
+        // But, this illustrates the point for new
+        // students.
+        $name = $user->name;
+        $location = $user->location;
+        $age = $user->age;
+
+        return view('home', compact('name', 'location', 'age'));
     }
 }
