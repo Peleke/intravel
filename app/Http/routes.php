@@ -26,14 +26,20 @@ Route::get('/home', function () {
 });
 
 Route::get('/about', function () {
-	// We can create a variable, called $VARIABLE . . . 
-	$name = 'Peleke';
-
-	// . . . And pass it to the view using compact().
-
-	// We can also just do what compact is doing ourselves:
-	// return view('about', ['name' => $name]);
-
-	// . . . But I prefer it this way. It's more compact.
-	return view('about', compact('name'));
+	// Our route is nice and tidy.
+	return view('about', aboutMeValues ());
 });
+
+// Extracting data logic from our route is
+// good practice. 
+// 
+// But, cluttering up our
+// routes.php file with functions like this
+// isn't . . . There's a better way.
+function aboutMeValues() {
+	$name     = 'Peleke';
+	$age  	  = 23;
+	$location = 'Syracuse';
+
+	return compact('name', 'age', 'location');
+}

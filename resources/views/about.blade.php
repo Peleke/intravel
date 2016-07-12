@@ -1,16 +1,18 @@
 @extends('layout')
 
 @section('title')
-About
+About Me
 @stop
 
 @section('content')
-<div class="container">
-	<div class="content">
-		<div class="title">About Me</div>	
-		<h2>My name is {{ $name }}.</h2>
+
+<h1>About Me</h1>
+<ul class="list-group">
+	<li class="list-group-item">My name is {{ $name }}.</li>
+	<li class="list-group-item">I am {{ $age }} years old.</li>
+	<li class="list-group-item">I live in {{ $location }}.</li>
+</ul>
+
 		<!-- ^ That's a lot better!  -->
 		<!-- Now, how to get it to work . . .-->
-	</div>
-</div>
 @stop
