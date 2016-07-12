@@ -31,6 +31,10 @@
         .profile-image {
             margin-right: 0.5em;
         }
+
+        .form-group {
+            padding: 0.5em;
+        }
     </style>
 </head>
 <body id="app-layout">

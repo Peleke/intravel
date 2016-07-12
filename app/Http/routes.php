@@ -30,3 +30,5 @@ Route::get('/about', 'AboutController@aboutMe');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::patch('/users/{user}', 'UserController@update');
